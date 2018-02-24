@@ -4,20 +4,28 @@ import theme from '../theme'
 import Content from './content'
 
 const ContentPink = Content.extend`
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 50rem) {
+    margin-left: auto;
+  }
 
   &:after {
     background:${theme.primaryColor90};
     content: '';
     height: 100%;
     position: absolute;
-    right: 5%;
-    top: 5%;
-    width: 80%;
+    right: 0;
+    top: 0;
+    width: 100%;
     z-index: -1;
-  }
 
-  @media (min-width: 44rem) {
-    max-width: 70vw;
+    @media (min-width: 50rem) {
+      width: 75%;
+      right: 5%;
+      top: 5%;
+    }
   }
 `
 

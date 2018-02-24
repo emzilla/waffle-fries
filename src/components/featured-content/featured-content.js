@@ -38,5 +38,3 @@ const FeaturedContent = styled.section`
 `
 
 export default FeaturedContent
-
-

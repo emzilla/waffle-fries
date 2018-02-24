@@ -2,40 +2,59 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import { theme, Button, ButtonRight, Content, ContentGreen, ContentPink, ContentPinkAlt, Heading, Hero, FeaturedContent } from '../components/'
+import { 
+  theme, 
+  Button, 
+  ButtonRight, 
+  Container, 
+  Content, 
+  ContentGreen, 
+  ContentPink, 
+  ContentPinkAlt, 
+  Heading, 
+  Hero, 
+  HeroContainer, 
+  FeaturedContent,
+  Layout
+} from '../components/'
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 
     return (
-      <div>
+      <Layout>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-        <Hero>
-          <img src="http://via.placeholder.com/800x600" alt=""/>
-        </Hero>
-        <Button>Click Me Test</Button>
-        <FeaturedContent>
-          <img src="http://via.placeholder.com/1000x600" alt=""/>
-        </FeaturedContent>
-        <Content>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam quis praesentium. Numquam obcaecati laboriosam veniam expedita eaque alias ex, ipsa eius quaerat, non iure commodi a dolor sint sed!
-          <Button>Click One</Button>
-          <Button>Click Two</Button>
-        </Content>
-        <ContentGreen>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam quis praesentium. Numquam obcaecati laboriosam veniam expedita eaque alias ex, ipsa eius quaerat, non iure commodi a dolor sint sed!
-        </ContentGreen>
-        <ContentPink>
-          <Heading>Some Heading</Heading>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam quis praesentium. Numquam obcaecati laboriosam veniam expedita eaque alias ex, ipsa eius quaerat, non iure commodi a dolor sint sed!
-          <ButtonRight>Content Button</ButtonRight>
-        </ContentPink>
-        <ContentPinkAlt>
-          <Heading>Another Heading</Heading>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam quis praesentium. Numquam obcaecati laboriosam veniam expedita eaque alias ex, ipsa eius quaerat, non iure commodi a dolor sint sed! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam quis praesentium. Numquam obcaecati laboriosam veniam expedita eaque alias ex, ipsa eius quaerat, non iure commodi a dolor sint sed!
-        </ContentPinkAlt>
-      </div>
+        <HeroContainer>
+            <Hero>
+              <h1>
+                <Link to={'/'} >
+                  Emily Davidson
+                </Link>
+              </h1>
+              <img src="../../emily-laugh-2.png" alt=""/>
+            </Hero>
+            <ContentPink>
+                <h1>...is a designer and developer</h1>
+                <p>And no, she won’t choose one over the other.</p>
+                <p>Currently, she’s writing CSS and JavaScript, helping to create a design system in React at InMotionNow. In the past, she has been a web designer, developer, email designer and developer, freelance graphic artist, and animator (it got weird).</p>
+                <p>Her work is thoughtfully experimental, and she is always finding a way to be resourceful. She is proud to create well-crafted, fun things on the web.</p>
+                <ButtonRight>Click One</ButtonRight>
+            </ContentPink>
+          </HeroContainer>
+        <Container>
+          <ContentPinkAlt>
+            <h1>About</h1>
+            <p>I was born and bred in Raleigh, NC, and never left: it was a great place to live, has an international airport, and is 3 hours from the beach or mountains.</p>
+            <p>I love pizza, cats, and podcasts in no particular order.</p>
+          </ContentPinkAlt>
+          <ContentGreen>
+            <h1>About</h1>
+              <p>I was born and bred in Raleigh, NC, and never left: it was a great place to live, has an international airport, and is 3 hours from the beach or mountains.</p>
+              <p>I love pizza, cats, and podcasts in no particular order.</p>
+          </ContentGreen>
+        </Container>
+      </Layout>
     )
   }
 }
