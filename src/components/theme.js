@@ -1,7 +1,7 @@
 const theme = {
   // Theme colors
   primaryColor: 'rgba(254, 246, 247, 1)',
-  primaryColor90: 'rgba(254, 246, 247, 0.9)',
+  primaryColor80: 'rgba(254, 246, 247, 0.8)',
   secondaryColor: '#eaf4f1',
   accentColor: '#ef2335',
   accentGradient: 'linear-gradient(-45deg, #23cd9b, #fac305)',

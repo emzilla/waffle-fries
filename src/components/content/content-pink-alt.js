@@ -7,7 +7,7 @@ const ContentPinkAlt = Content.extend`
   padding: 5rem;
   
   &:after {
-    background:${theme.primaryColor90};
+    background:${theme.primaryColor80};
     bottom: 5%;
     content: '';
     height: 100%;
