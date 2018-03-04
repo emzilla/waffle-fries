@@ -42,18 +42,6 @@ class BlogIndex extends React.Component {
                 <ButtonRight>Click One</ButtonRight>
             </ContentPink>
           </HeroContainer>
-        <Container>
-          <ContentPinkAlt>
-            <h1>About</h1>
-            <p>I was born and bred in Raleigh, NC, and never left: it was a great place to live, has an international airport, and is 3 hours from the beach or mountains.</p>
-            <p>I love pizza, cats, and podcasts in no particular order.</p>
-          </ContentPinkAlt>
-          <ContentGreen>
-            <h1>About</h1>
-              <p>I was born and bred in Raleigh, NC, and never left: it was a great place to live, has an international airport, and is 3 hours from the beach or mountains.</p>
-              <p>I love pizza, cats, and podcasts in no particular order.</p>
-          </ContentGreen>
-        </Container>
       </Layout>
     )
   }

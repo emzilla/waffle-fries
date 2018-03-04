@@ -2,6 +2,12 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import { 
+  theme,
+  Container, 
+  ContentPinkAlt,
+  Layout
+} from '../components/'
 
 import Bio from '../components/Bio'
 
@@ -11,16 +17,18 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div>
+      <Layout>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Bio />
-      </div>
+        <Container>
+          <ContentPinkAlt>
+            <h1>{post.frontmatter.title}</h1>
+            <p>
+              {post.frontmatter.date}
+            </p>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </ContentPinkAlt>
+        </Container>
+      </Layout>
     )
   }
 }

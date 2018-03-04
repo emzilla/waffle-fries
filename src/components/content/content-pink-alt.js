@@ -4,8 +4,18 @@ import theme from '../theme'
 import Content from './content'
 
 const ContentPinkAlt = Content.extend`
-  padding: 5rem;
-  
+  &:before {
+    background: ${theme.reverseGradient};
+    content: '';
+    display: block;
+    height: 8rem;
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 8rem;
+    z-index: -3;
+  }
+
   &:after {
     background:${theme.primaryColor80};
     bottom: 5%;
@@ -19,8 +29,9 @@ const ContentPinkAlt = Content.extend`
   }
 
   @media (min-width: 44rem) {
-    max-width: 70vw;
+    max-width: 65vw;
   }
+  
 `
 
 export default ContentPinkAlt
