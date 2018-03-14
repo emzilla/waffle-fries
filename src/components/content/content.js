@@ -13,6 +13,10 @@ const Content = styled.section`
     max-width: 60vw;
     padding: 4rem;
   }
+
+  &:not(:first-of-type) {
+    margin-top: ${props => props.homeContent ? '0' : '10rem'};
+  }
 `
 
 export default Content

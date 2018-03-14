@@ -1,5 +1,6 @@
 const theme = {
   // Theme colors
+  backgroundColor: '#212927' ,
   primaryColor: 'rgba(254, 246, 247, 1)',
   primaryColor80: 'rgba(254, 246, 247, 0.8)',
   secondaryColor: '#eaf4f1',
@@ -7,6 +8,7 @@ const theme = {
   accentGradient: 'linear-gradient(-45deg, #23cd9b, #fac305)',
   reverseGradient: 'linear-gradient(45deg, #23cd9b, #fac305)',
   fontColor: '#212927',
+  fontColorInverse: '#fff',
   // fontFamilyBody: '',
   // fontFamilyTitle: '',
 

@@ -34,7 +34,7 @@ class BlogIndex extends React.Component {
               </h1>
               <img src="../../emily-laugh-2.png" alt=""/>
             </Hero>
-            <ContentPink>
+            <ContentPink homeContent>
                 <h1>...is a designer and developer</h1>
                 <p>And no, she won’t choose one over the other.</p>
                 <p>Currently, she’s writing CSS and JavaScript, helping to create a design system in React at InMotionNow. In the past, she has been a web designer, developer, email designer and developer, freelance graphic artist, and animator (it got weird).</p>

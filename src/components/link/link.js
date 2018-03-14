@@ -9,6 +9,10 @@ const ALink = styled.a`
         color: ${theme.fontColor};
     }
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &:hover, &:focus {
         color: ${theme.accentColor};
     }

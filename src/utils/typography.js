@@ -6,6 +6,7 @@ const typography = new Typography({
   baseLineHeight: 1.4,
   headerFontFamily: ['Playfair Display', 'Georgia', 'serif'],
   bodyFontFamily: ['Muli', 'Arial', 'Helvetica', 'sans-serif'],
+  bodyWeight: '300',
   googleFonts: [
     {
       name: 'Playfair Display',
@@ -13,7 +14,7 @@ const typography = new Typography({
     },
     {
       name: 'Muli',
-      styles: ['400']
+      styles: ['300']
     }
   ]
 })

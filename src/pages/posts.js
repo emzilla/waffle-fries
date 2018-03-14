@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { 
   theme,
   Container,
+  ContentPinkAlt,
   Layout,
   ALink
 } from '../components/'
@@ -12,13 +13,28 @@ import {
 class PostsList extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <Layout>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
         <Container>
-            <h1>Posts will go here</h1> 
-            <p>Link to creating post lists <ALink href="https://www.gatsbyjs.org/docs/adding-a-list-of-markdown-blog-posts/">https://www.gatsbyjs.org/docs/adding-a-list-of-markdown-blog-posts/</ALink></p>    
+          {posts.map(post => {
+            if (post.node.path !== '/404/') {
+              const title = get(post, 'node.frontmatter.title') || post.node.path
+              return (
+                <ContentPinkAlt key={post.node.frontmatter.path}>
+                  <h1>
+                    <Link to={post.node.frontmatter.path} >
+                      {post.node.frontmatter.title}
+                    </Link>
+                  </h1>
+                  <small>{post.node.frontmatter.date}</small>
+                  <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+                </ContentPinkAlt>
+              )
+            }
+          })}
         </Container>
       </Layout>
     )
