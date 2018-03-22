@@ -27,6 +27,10 @@ const theme = {
   // TODO: find a way to create variables for gradients above ^
   gradientBorder: 'linear-gradient(-45deg, #23cd9b, #fac305)',
   reverseGradientBorder: 'linear-gradient(45deg, #23cd9b, #fac305)',
+
+  // Transitions
+  baseTransitionTiming: '0.2s',
+  baseTransitionEasing: 'cubic-bezier(0.39, 0.58, 0.57, 1)',
 }
 
 export default theme

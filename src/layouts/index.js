@@ -9,13 +9,14 @@ class AppLayout extends React.Component {
     return (
       <div>
         {header}
-        <Menu>
-          <ul>
-            <li><Link to={'/'}>Emily Davidson</Link></li>
-            <li><Link to={'/about'}>About</Link></li>
-            <li><Link to={'/posts'}>Posts</Link></li>
-          </ul>
-        </Menu>
+        <Menu links={
+            [
+              {path: '/', name: 'Emily Davidson'},
+              {path: '/about', name: 'about'},
+              {path: '/posts', name: 'posts'},              
+            ]
+          }
+        />
         {children()}
       </div>
     )
