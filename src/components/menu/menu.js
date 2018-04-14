@@ -6,28 +6,28 @@ import { VisuallyHidden } from '../'
 
 const animations = {
     topOpen: keyframes`
-        0% {transform: translateY(1.875em) rotate(0deg); background-image: var(--background-image-ltr);}
-        50% {transform: translateY(var(--top-translate-y--closed)) rotate(0deg);}
-        95%, 100% {transform: translateY(var(--top-translate-y--closed)) rotate(45deg); background-image: var(--background-image-rtl);}
+        0% {transform: translateY(1rem) rotate(0deg);}
+        50% {transform: translateY(5px) rotate(0deg);}
+        95%, 100% {transform: translateY(5px) rotate(45deg); }
     `,
     bottomOpen: keyframes`
-        0% {transform: translateY(-1.875em) rotate(0deg); background-image: var(--background-image-ltr);}
-        50% {transform: translateY(var(--bottom-translate-y--closed)) rotate(0deg);}
-        95%, 100% {transform: translateY(var(--bottom-translate-y--closed)) rotate(-45deg); background-image: var(--background-image-rtl);}
+        0% {transform: translateY(-1rem) rotate(0deg);}
+        50% {transform: translateY(-5px) rotate(0deg);}
+        95%, 100% {transform: translateY(-5px) rotate(-45deg);}
     `,
     middleOpen: keyframes`
         0%, 30% {opacity: 1;}
         50%, 100% {opacity: 0;}
     `,
     topClosed: keyframes`
-        0%, 5% {transform: translateY(var(--top-translate-y--closed)) rotate(45deg); background-image: var(--background-image-rtl);}
-        50% {transform: translateY(var(--top-translate-y--closed)) rotate(0deg);}
-        100% {transform: translateY(1.875em) rotate(0deg); background-image: var(--background-image-ltr);}
+        0%, 5% {transform: translateY(5px) rotate(45deg);}
+        50% {transform: translateY(5px) rotate(0deg);}
+        100% {transform: translateY(1rem) rotate(0deg); }
     `,
     bottomClosed: keyframes`
-        0%, 5% {transform: translateY(var(--bottom-translate-y--closed)) rotate(-45deg); background-image: var(--background-image-rtl);}
-        50% {transform: translateY(var(--bottom-translate-y--closed)) rotate(0deg);}
-        100% {transform: translateY(-1.875em) rotate(0deg); background-image: var(--background-image-ltr);}
+        0%, 5% {transform: translateY(5px) rotate(-45deg);}
+        50% {transform: translateY5px) rotate(0deg);}
+        100% {transform: translateY(-1rem) rotate(0deg);}
     `,
     middleClosed: keyframes`
         0%, 50% {opacity: 0;}
@@ -38,8 +38,9 @@ const StyledMenu = styled.div`
     background: ${theme.backgroundColor};
     color: ${theme.fontColorInverse};
     padding: ${theme.paddingMd} ${theme.paddingMd} ${theme.paddingLg};
+    position: relative;
     transform: ${props => props.isClosed ? 'translateY(-100%)' : 'translateY(0)'};
-    transition: transform ${theme.baseTransitionTiming} ${theme.baseTransitionEasing};
+    transition: transform ${theme.baseTransitionTiming} cubic-bezier(.63,.4,.69,1);
 
     ul {
         align-items: baseline;
@@ -80,15 +81,16 @@ const StyledMenu = styled.div`
     }
 `
 
-// color: ${props => props.primary ? 'white' : 'palevioletred'};
-
 const StyledButton = styled.button`
     background: transparent;
     border: none;
+    bottom: -120%;
     color: ${theme.fontColorInverse};
+    height: 100%;
+    padding: 0;
     position: absolute;
-    right: 2%;
-    top: 125%;
+    right: 1rem;
+    width: 2.5rem;
 
     &:hover {
         cursor: pointer;
@@ -100,43 +102,66 @@ const StyledButton = styled.button`
 `
 
 const MenuLine = styled.span`
-    background-color: #08AEEA;
-    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
-    border-radius: 0.75em;
-    box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.3);
+    background-color: ${theme.backgroundColor};
+    border-radius: 5px;
     display: block;
-    height: 0.125rem;
+    height: 5px;
     transform-origin: center;
-    width: 2rem;
+    width: 2.5rem;
     z-index: 10;
+
+    animation-name: ${props => {
+        if (props.menuLineTop) {
+            if(!props.isClosed) {
+                return animations.topOpen;
+            } else {
+                return animations.topClosed;
+            }
+        } else if (props.menuLineBottom) {
+            if(!props.isClosed) {
+                return animations.bottomOpen;
+            } else {
+                return animations.bottomClosed;
+            }
+        } else if (props.menuLineMiddle) {
+            if(!props.isClosed) {
+                return animations.middleOpen;
+            } else {
+                return animations.middleClosed;
+            }
+        }
+    }};
+    animation-duration: 250ms;
+    animation-timing-function: cubic-bezier(.63,.4,.69,1.29);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-direction: alternate;
 
     transform: ${props => {
         if (props.menuLineTop) {
             if(!props.isClosed) {
-                return 'translateY(0.125rem) rotate(45deg)';
+                return 'translateY(5px) rotate(45deg)';
             } else {
-                return 'translateY(0.55rem) rotate(0deg)';
+                return 'translateY(1rem) rotate(0deg)';
             }
         } else if (props.menuLineBottom) {
             if(!props.isClosed) {
-                return 'translateY(-0.125rem) rotate(-45deg)';
+                return 'translateY(-5px) rotate(-45deg)';
             } else {
-                return 'translateY(-0.55rem) rotate(0deg)';
+                return 'translateY(-1rem) rotate(0deg)';
             }
         } else if (props.menuLineMiddle) {
             if(!props.isClosed) {
-                return 'translate(0, -0.125rem)';
+                return 'translate(0, -5px)';
             }
         }
     }};
 
     opacity: ${props => {
-        if (props.menuLineMiddle && !props.isClosed) {
-            return '0';
-        } else {
+        if (props.menuLineMiddle && props.isClosed) {
             return '1';
         }
-    }}
+    }};
 `
 
 class Menu extends React.Component {
