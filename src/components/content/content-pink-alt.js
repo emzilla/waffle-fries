@@ -22,14 +22,25 @@ const ContentPinkAlt = Content.extend`
     content: '';
     height: 100%;
     position: absolute;
-    left: 0;
-    top: 5%;
+    left: -2%;
+    top: 2%;
     width: 100%;
     z-index: -1;
   }
 
   @media (min-width: 44rem) {
     max-width: 65vw;
+  }
+
+  &:nth-of-type(2n) {
+    &:before {
+      left: -2rem;
+    }
+
+    &:after {
+      top: -2%;
+      left: 4%;
+    }
   }
   
 `

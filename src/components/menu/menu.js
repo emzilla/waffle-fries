@@ -34,7 +34,7 @@ const animations = {
         70%, 100% {opacity: 1;}
     `
 }
-const StyledMenu = styled.div`
+const StyledMenu = styled.nav`
     background: ${theme.backgroundColor};
     color: ${theme.fontColorInverse};
     padding: ${theme.paddingMd} ${theme.paddingMd} ${theme.paddingLg};

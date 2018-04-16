@@ -24,6 +24,7 @@ injectGlobal`
 `
 
 export Button from './button/button'
+export Breadcrumbs from './breadcrumbs/breadcrumbs'
 export ButtonRight from './button/button-right'
 export Container from './container/container'
 export HeroContainer from './container/hero-container'

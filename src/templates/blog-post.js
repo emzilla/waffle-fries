@@ -4,12 +4,11 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import { 
   theme,
+  Breadcrumbs,
   Container, 
   ContentPinkAlt,
   Layout
 } from '../components/'
-
-import Bio from '../components/Bio'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -20,6 +19,9 @@ class BlogPostTemplate extends React.Component {
       <Layout>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <Container>
+          <Breadcrumbs>
+            <Link to={'/posts'} >&laquo;Back to Posts</Link>
+          </Breadcrumbs>
           <ContentPinkAlt>
             <h1>{post.frontmatter.title}</h1>
             <p>
