@@ -4,13 +4,15 @@ import theme from '../theme'
 
 const Content = styled.section`
   line-height: 1.3;
-  max-width: 90vw;
   padding: 2rem;
   position: relative;
 
   @media (min-width: 44rem) {
-    max-width: 60vw;
     padding: 4rem;
+  }
+
+  @media (min-width: 60rem) {
+    max-width: 90vw;
   }
 
   &:not(:first-of-type) {

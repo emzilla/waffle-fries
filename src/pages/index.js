@@ -35,11 +35,8 @@ class BlogIndex extends React.Component {
               <img src="../../emily-laugh-2.png" alt=""/>
             </Hero>
             <ContentPink homeContent>
-                <h1>...is a designer and developer</h1>
-                <p>And no, she won’t choose one over the other.</p>
-                <p>Currently, she’s writing CSS and JavaScript, helping to create a design system in React at InMotionNow. In the past, she has been a web designer, developer, email designer and developer, freelance graphic artist, and animator (it got weird).</p>
-                <p>Her work is thoughtfully experimental, and she is always finding a way to be resourceful. She is proud to create well-crafted, fun things on the web.</p>
-                <ButtonRight>Click One</ButtonRight>
+              <h1>...is a creative front-end developer.</h1>
+              <p>She values thoughtful experimentation, craft, and great user-focused design all while using her background in design to bring fresh perspective to her working process. Currently, Emily is obsessed with React as well as CSS and JavaScript animation. Always up for something new, she has experience with a variety of technologies and tools: creating web apps, mobile apps, and design systems.</p>
             </ContentPink>
           </HeroContainer>
       </Layout>

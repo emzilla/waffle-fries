@@ -28,7 +28,7 @@ const ContentPinkAlt = Content.extend`
     z-index: -1;
   }
 
-  @media (min-width: 44rem) {
+  @media (min-width: 60rem) {
     max-width: 65vw;
   }
 

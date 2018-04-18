@@ -6,8 +6,7 @@ import {
   theme,
   Container,
   ContentPinkAlt,
-  Layout,
-  ALink
+  Layout
 } from '../components/'
 
 class PostsList extends React.Component {

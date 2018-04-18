@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Menu } from '../components/'
+import { Logo, Menu } from '../components/'
 
 class AppLayout extends React.Component {
   render() {
@@ -9,9 +9,9 @@ class AppLayout extends React.Component {
     return (
       <div>
         {header}
+        <Logo><Link to={'/'}>{'Emily Davidson'}</Link></Logo>
         <Menu links={
             [
-              {path: '/', name: 'Emily Davidson'},
               {path: '/about', name: 'about'},
               {path: '/posts', name: 'posts'},              
             ]

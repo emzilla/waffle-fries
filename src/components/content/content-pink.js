@@ -7,7 +7,7 @@ const ContentPink = Content.extend`
   position: relative;
   z-index: 2;
 
-  @media (min-width: 50rem) {
+  @media (min-width: 60rem) {
     margin-left: auto;
   }
 

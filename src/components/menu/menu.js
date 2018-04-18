@@ -37,10 +37,11 @@ const animations = {
 const StyledMenu = styled.nav`
     background: ${theme.backgroundColor};
     color: ${theme.fontColorInverse};
-    padding: ${theme.paddingMd} ${theme.paddingMd} ${theme.paddingLg};
-    position: relative;
+    padding: ${theme.paddingLg};
+    position: fixed;
     transform: ${props => props.isClosed ? 'translateY(-100%)' : 'translateY(0)'};
     transition: transform ${theme.baseTransitionTiming} cubic-bezier(.63,.4,.69,1);
+    width: 100%;
 
     ul {
         align-items: baseline;
@@ -52,18 +53,10 @@ const StyledMenu = styled.nav`
     }
 
     li {
+        letter-spacing: 0.045rem;
         margin-bottom: 0;
         padding-left: ${theme.paddingMd};
         padding-right: ${theme.paddingMd};
-
-        &:first-of-type {
-            font-family: 'Playfair Display', 'Georgia', 'serif';
-            font-size: 1.5rem;
-        }
-
-        &:not(:first-of-type) {
-            letter-spacing: 0.045rem;
-        }
 
         &:last-of-type {
             margin-left: auto;
@@ -71,12 +64,17 @@ const StyledMenu = styled.nav`
     }
 
     a {
+        color: ${theme.fontColorInverse};
         text-decoration: none;
+        transition: color ${theme.baseTransitionTiming} ${theme.baseTransitionEasing};
 
-        &:hover,
+        &:hover {
+            color: ${theme.secondaryColor};
+        }
+
         &:focus,
         &:visited {
-            color: #fff;
+            color: ${theme.fontColorInverse};
         }
     }
 `
@@ -168,7 +166,7 @@ class Menu extends React.Component {
     constructor(props) {
         super(props)
         this.state = { 
-            closed: true
+            closed: false
         }
         this.toggleClosed = this.toggleClosed.bind(this)
     }

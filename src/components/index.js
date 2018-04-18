@@ -21,6 +21,24 @@ injectGlobal`
     height: auto;
     max-width: 100%;
   }
+
+  a {
+    color: ${theme.fontColor};
+    text-decoration-skip-ink: auto;
+    transition: color ${theme.baseTransitionTiming} ${theme.baseTransitionEasing};    
+
+    &:visited {
+        color: ${theme.fontColor};
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover, &:focus {
+        color: ${theme.accentColor};
+    }
+  }
 `
 
 export Button from './button/button'
@@ -36,6 +54,6 @@ export Heading from './heading/heading'
 export Hero from './hero/hero'
 export Menu from './menu/menu'
 export Layout from './layout/layout'
-export ALink from './link/link'
+export Logo from './logo/logo'
 export FeaturedContent from './featured-content/featured-content'
 export VisuallyHidden from './helpers/visuallyhidden.js'
