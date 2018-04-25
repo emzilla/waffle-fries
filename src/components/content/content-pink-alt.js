@@ -17,7 +17,7 @@ const ContentPinkAlt = Content.extend`
   }
 
   &:after {
-    background:${theme.primaryColor80};
+    background:${theme.primaryColorTransparent};
     bottom: 5%;
     content: '';
     height: 100%;

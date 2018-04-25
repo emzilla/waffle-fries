@@ -2,7 +2,7 @@ const theme = {
   // Theme colors
   backgroundColor: '#212927' ,
   primaryColor: 'rgba(254, 246, 247, 1)',
-  primaryColor80: 'rgba(254, 246, 247, 0.8)',
+  primaryColorTransparent: 'rgba(255, 255, 255, 0.6)',
   secondaryColor: '#eaf4f1',
   accentColor: '#ef2335',
   accentGradient: 'linear-gradient(-45deg, #23cd9b, #fac305)',

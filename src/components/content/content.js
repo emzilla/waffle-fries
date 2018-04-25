@@ -16,7 +16,9 @@ const Content = styled.section`
   }
 
   &:not(:first-of-type) {
-    margin-top: ${props => props.homeContent ? '0' : '10rem'};
+    @media (min-width: 44rem) {
+      margin-top: ${props => props.homeContent ? '0' : '10rem'};
+    }
   }
 `
 

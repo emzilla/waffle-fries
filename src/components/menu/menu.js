@@ -166,7 +166,7 @@ class Menu extends React.Component {
     constructor(props) {
         super(props)
         this.state = { 
-            closed: false
+            closed: true
         }
         this.toggleClosed = this.toggleClosed.bind(this)
     }

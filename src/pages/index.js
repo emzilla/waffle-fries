@@ -8,6 +8,7 @@ import {
   ButtonRight, 
   Container, 
   Content, 
+  ContentContainer,
   ContentGreen, 
   ContentPink, 
   ContentPinkAlt, 
@@ -15,7 +16,7 @@ import {
   Hero, 
   HeroContainer, 
   FeaturedContent,
-  Layout
+  LayoutFlex
 } from '../components/'
 
 class BlogIndex extends React.Component {
@@ -23,7 +24,7 @@ class BlogIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 
     return (
-      <Layout>
+      <LayoutFlex>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
         <HeroContainer>
             <Hero>
@@ -35,11 +36,13 @@ class BlogIndex extends React.Component {
               <img src="../../emily-laugh-2.png" alt=""/>
             </Hero>
             <ContentPink homeContent>
-              <h1>...is a creative front-end developer.</h1>
-              <p>She values thoughtful experimentation, craft, and great user-focused design all while using her background in design to bring fresh perspective to her working process. Currently, Emily is obsessed with React as well as CSS and JavaScript animation. Always up for something new, she has experience with a variety of technologies and tools: creating web apps, mobile apps, and design systems.</p>
+              <ContentContainer>
+                <h1>...is a creative front-end developer.</h1>
+                <p>She values thoughtful experimentation, craft, and great user-focused work all while using her background in design to bring fresh perspective to her process. Currently, Emily is obsessed with React as well as CSS and JavaScript animation. Always up for something new, she has experience with a variety of technologies and tools: creating web apps, mobile apps, and design systems.</p>
+              </ContentContainer>
             </ContentPink>
           </HeroContainer>
-      </Layout>
+      </LayoutFlex>
     )
   }
 }

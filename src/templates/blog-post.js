@@ -5,7 +5,8 @@ import get from 'lodash/get'
 import { 
   theme,
   Breadcrumbs,
-  Container, 
+  Container,
+  ContentContainer,
   ContentPinkAlt,
   Layout
 } from '../components/'
@@ -23,11 +24,13 @@ class BlogPostTemplate extends React.Component {
             <Link to={'/posts'} >&laquo;Back to Posts</Link>
           </Breadcrumbs>
           <ContentPinkAlt>
-            <h1>{post.frontmatter.title}</h1>
-            <p>
-              {post.frontmatter.date}
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <ContentContainer>
+              <h1>{post.frontmatter.title}</h1>
+              <p>
+                {post.frontmatter.date}
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              </ContentContainer>
           </ContentPinkAlt>
         </Container>
       </Layout>

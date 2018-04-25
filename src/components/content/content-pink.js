@@ -12,7 +12,7 @@ const ContentPink = Content.extend`
   }
 
   &:after {
-    background:${theme.primaryColor80};
+    background:${theme.primaryColorTransparent};
     content: '';
     height: 100%;
     position: absolute;

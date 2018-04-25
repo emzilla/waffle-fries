@@ -15,6 +15,12 @@ injectGlobal`
     background-attachment: fixed;
     color: ${theme.fontColor};
     letter-spacing: 0.025rem;
+
+    // Keep nested gatsby divs at 100% height
+    > *,
+    > * > * {
+      height: 100%;
+    }
   }
 
   img {
@@ -47,6 +53,7 @@ export ButtonRight from './button/button-right'
 export Container from './container/container'
 export HeroContainer from './container/hero-container'
 export Content from './content/content'
+export ContentContainer from './content/content-container'
 export ContentGreen from './content/content-green'
 export ContentPink from './content/content-pink'
 export ContentPinkAlt from './content/content-pink-alt'
@@ -54,6 +61,7 @@ export Heading from './heading/heading'
 export Hero from './hero/hero'
 export Menu from './menu/menu'
 export Layout from './layout/layout'
+export LayoutFlex from './layout/layout-flex'
 export Logo from './logo/logo'
 export FeaturedContent from './featured-content/featured-content'
 export VisuallyHidden from './helpers/visuallyhidden.js'

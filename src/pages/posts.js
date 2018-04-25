@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { 
   theme,
   Container,
+  ContentContainer,
   ContentPinkAlt,
   Layout
 } from '../components/'
@@ -23,6 +24,7 @@ class PostsList extends React.Component {
               const title = get(post, 'node.frontmatter.title') || post.node.path
               return (
                 <ContentPinkAlt key={post.node.frontmatter.path}>
+                  <ContentContainer>
                   <h1>
                     <Link to={post.node.frontmatter.path} >
                       {post.node.frontmatter.title}
@@ -30,6 +32,7 @@ class PostsList extends React.Component {
                   </h1>
                   <small>{post.node.frontmatter.date}</small>
                   <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+                  </ContentContainer>
                 </ContentPinkAlt>
               )
             }
