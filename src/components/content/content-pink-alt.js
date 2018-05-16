@@ -4,16 +4,23 @@ import theme from '../theme'
 import Content from './content'
 
 const ContentPinkAlt = Content.extend`
-  &:before {
-    background: ${theme.reverseGradient};
-    content: '';
-    display: block;
-    height: 8rem;
-    position: absolute;
-    top: -2rem;
-    right: -2rem;
-    width: 8rem;
-    z-index: -3;
+    
+    &:before {
+      background: ${theme.reverseGradient};
+      content: '';
+      display: block;
+      height: 8rem;
+      position: absolute;
+      opacity: 0;
+      top: -2rem;
+      transition: opacity 0.3s ease-in;
+      right: -2rem;
+      width: 8rem;
+      z-index: -3;
+      
+      @media (min-width: 60rem) {
+        opacity: 1;
+      }
   }
 
   &:after {

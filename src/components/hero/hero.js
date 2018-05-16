@@ -6,19 +6,18 @@ const Hero = styled.section`
   max-height: 100%;
   max-width: 90vw;
   position: relative;
-  text-align: right;
   transition: height 0.3s ease-in;
 
   @media (min-width: 62rem) {
     max-width: 100%;
     margin-right: auto;
-    width: 60%;
+    width: 75%;
   }
 
   &:before {
     background:${theme.secondaryColor};
     content: '';
-    height: 100%;
+    height: 0;
     left: 5%;
     opacity: 0;
     position: absolute;
@@ -28,35 +27,35 @@ const Hero = styled.section`
     z-index: -1;
 
     @media (min-width: 62rem) {
+      height: 100%;
       opacity: 1;
       width: 120%;
     }
   }
 
    > img {
-    opacity: 0;
-    max-height: 0;
-    transition: all 0.3s ease-in;
-
-    @media (min-width: 30rem) {
-      opacity: 1;
-      max-height: 100%;
-    }
+    max-height: 100%;
+    margin-bottom: 0;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    text-align: left;
     line-height: 0.9;
     letter-spacing: 0.05rem;
     max-width: 18rem;
     z-index: 3;
+    mix-blend-mode: overlay;
 
     @media (min-width: 30rem) {
       font-size: 4rem;
-      position: absolute;
+      text-align: right;
+      left: unset;
       right: 2%;
       bottom: 4%;
-      text-align: right;
     }
   }
 
