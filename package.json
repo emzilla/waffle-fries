@@ -10,7 +10,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "css-loader": "^0.28.9",
     "gatsby": "^1.8.12",
-    "gatsby-cli": "^1.1.42",
+    "gatsby-cli": "^1.1.58",
     "gatsby-link": "^1.6.8",
     "gatsby-plugin-google-analytics": "^1.0.4",
     "gatsby-plugin-google-fonts": "^0.0.3",
